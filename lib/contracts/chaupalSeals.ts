@@ -1,10 +1,8 @@
 /**
- * ABI extracted from `contracts/out/ChaupalSeals.sol/ChaupalSeals.json` after `forge build`.
- * Re-extract with:
- *   node -e "const a=require('./contracts/out/ChaupalSeals.sol/ChaupalSeals.json');
- *   require('fs').writeFileSync('lib/contracts/ChaupalSeals.abi.json', JSON.stringify(a.abi,null,2))"
- * whenever the contract's public interface changes, then inline it here with `as const` so
- * viem/wagmi can infer function names, args, and event types.
+ * ChaupalSeals ABI, inlined `as const` so viem/wagmi infer function names, args, and event types
+ * (a JSON import would widen every field to `string`). Whenever the contract's public interface
+ * changes, regenerate it with `(cd contracts && forge inspect ChaupalSeals abi --json)` and paste
+ * the output over the array below.
  */
 export const chaupalSealsAbi = [
   {
