@@ -11,7 +11,7 @@ root.
 |---|---|
 | Network | Base Sepolia (chain id `84532`) |
 | `ChaupalSeals` | [`0xA0A5bDb07cD91411D937a43Cf2C113A41e308817`](https://sepolia.basescan.org/address/0xA0A5bDb07cD91411D937a43Cf2C113A41e308817) |
-| Deploy tx | [`0xed50fd07…96b9f2`](https://sepolia.basescan.org/tx/0xed50fd07b3395f7aa164f0b7fc4341c29698d5e4a0e4cb7c886e13847396b9f2) |
+| Deploy tx | `0xed50fd07…96b9f2` (full hash in the broadcast record below) |
 | Deployer | `0xA7864883fB579245478F75aC4882b170E7d7676c` |
 | Verified source | [Sourcify (exact match)](https://repo.sourcify.dev/84532/0xA0A5bDb07cD91411D937a43Cf2C113A41e308817) · [Blockscout](https://base-sepolia.blockscout.com/address/0xA0A5bDb07cD91411D937a43Cf2C113A41e308817) |
 

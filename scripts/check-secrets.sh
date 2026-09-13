@@ -50,9 +50,11 @@ grep -vE '^(scripts/check-secrets\.sh|package-lock\.json|contracts/soldeer\.lock
 fail_on_pattern() {
   pattern="$1"
   description="$2"
+  skip_files="${3:-}"
   matches=""
   while IFS= read -r f; do
     [ -f "$f" ] || continue
+    if [ -n "$skip_files" ] && echo "$f" | grep -qE "$skip_files"; then continue; fi
     if grep -IlE "$pattern" "$f" >/dev/null 2>&1; then
       matches="$matches
   - $f"
@@ -65,8 +67,10 @@ fail_on_pattern() {
   fi
 }
 
-# 1. Raw 0x-prefixed 32-byte private keys (64 hex chars).
-fail_on_pattern '0x[0-9a-fA-F]{64}' "possible raw private key (0x + 64 hex chars)"
+# 1. Raw 0x-prefixed 32-byte private keys (64 hex chars). Forge broadcast records are exempt:
+#    they hold only tx/block hashes of the same shape (forge never writes keys into them) and
+#    are still covered by every other check below.
+fail_on_pattern '0x[0-9a-fA-F]{64}' "possible raw private key (0x + 64 hex chars)" '^contracts/broadcast/.*\.json$'
 
 # 2. Well-known anvil/hardhat default account private keys (first three, with and without 0x).
 fail_on_pattern 'ac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80' "well-known anvil/hardhat default private key #0"
