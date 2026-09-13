@@ -8,8 +8,8 @@ pragma solidity ^0.8.24;
 /// @dev This is a *test-only* helper. The real off-chain source of truth for tree construction is
 /// `lib/membership` (TypeScript), which wraps the `StandardMerkleTree` builder from
 /// OpenZeppelin's merkle-tree npm package and supports arbitrary (non-power-of-two) leaf counts.
-/// `lib/membership`'s Vitest suite asserts
-/// leaf parity against the contract's `leafFor`; this helper only needs to agree with the
+/// `test/unit` checks its leaves against `StandardMerkleTree`, and `test/e2e` asserts leaf parity
+/// against the deployed contract's `leafFor`; this helper only needs to agree with the
 /// contract's pair-hashing, which for a balanced tree it does exactly.
 library MerkleTestHelper {
     function leafFor(uint256 groupId, address member) internal pure returns (bytes32) {
