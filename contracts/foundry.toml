@@ -24,7 +24,8 @@ base_sepolia = "${BASE_SEPOLIA_RPC_URL}"
 anvil = "http://127.0.0.1:8547"
 
 [etherscan]
-base_sepolia = { key = "${BASESCAN_API_KEY}", chain = 84532, url = "https://api-sepolia.basescan.org/api" }
+# No `url`: forge uses the Etherscan V2 multichain API (the old basescan V1 endpoint is retired).
+base_sepolia = { key = "${BASESCAN_API_KEY}", chain = 84532 }
 
 [dependencies]
 forge-std = "1.9.6"
