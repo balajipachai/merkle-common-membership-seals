@@ -11,7 +11,7 @@ import { ChaupalSeals } from "../src/ChaupalSeals.sol";
 ///   forge script script/Deploy.s.sol --rpc-url http://127.0.0.1:8547 \
 ///     --unlocked --sender <anvil account> --broadcast
 ///
-/// Base Sepolia usage (see NOTES-FOR-REVIEW.md for the full runbook - the orchestrator runs
+/// Base Sepolia usage (see README.md for the full runbook - the orchestrator runs
 /// this with the user, never with a key read from a file or env var):
 ///   cast wallet import chaupal-deployer --interactive
 ///   forge script script/Deploy.s.sol --account chaupal-deployer \

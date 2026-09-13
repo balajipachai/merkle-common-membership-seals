@@ -984,7 +984,7 @@ export function getChaupalSealsAddress(): `0x${string}` {
   if (!address || !address.startsWith("0x")) {
     throw new Error(
       "NEXT_PUBLIC_SEALS_ADDRESS is not set. Run `npm run dev:local` for a local deployment, " +
-        "or set it after deploying to Base Sepolia (see NOTES-FOR-REVIEW.md).",
+        "or set it after deploying to Base Sepolia (see README.md).",
     );
   }
   return address as `0x${string}`;
