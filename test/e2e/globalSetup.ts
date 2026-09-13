@@ -52,7 +52,9 @@ function deployContract(sender: string): string {
   const result = spawnSync(
     "forge",
     ["script", "script/Deploy.s.sol", "--rpc-url", RPC_URL, "--unlocked", "--sender", sender, "--broadcast"],
-    { cwd: CONTRACTS_DIR, encoding: "utf8" },
+    // anvil shares Base Sepolia's chain id, so forge would file this run under broadcast/.../84532/
+    // and overwrite the real deploy record. Redirect it into the gitignored cache instead.
+    { cwd: CONTRACTS_DIR, encoding: "utf8", env: { ...process.env, FOUNDRY_BROADCAST: "cache/local-broadcast" } },
   );
   if (result.status !== 0) {
     throw new Error(`forge script deploy failed:\n${result.stdout}\n${result.stderr}`);
