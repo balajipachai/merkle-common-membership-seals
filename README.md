@@ -13,7 +13,7 @@ root.
 | `ChaupalSeals` | [`0xA0A5bDb07cD91411D937a43Cf2C113A41e308817`](https://sepolia.basescan.org/address/0xA0A5bDb07cD91411D937a43Cf2C113A41e308817) |
 | Deploy tx | `0xed50fd07…96b9f2` (full hash in the broadcast record below) |
 | Deployer | `0xA7864883fB579245478F75aC4882b170E7d7676c` |
-| Verified source | [Sourcify (exact match)](https://repo.sourcify.dev/84532/0xA0A5bDb07cD91411D937a43Cf2C113A41e308817) · [Blockscout](https://base-sepolia.blockscout.com/address/0xA0A5bDb07cD91411D937a43Cf2C113A41e308817) |
+| Verified source | [Basescan](https://sepolia.basescan.org/address/0xA0A5bDb07cD91411D937a43Cf2C113A41e308817#code) · [Sourcify (exact match)](https://repo.sourcify.dev/84532/0xA0A5bDb07cD91411D937a43Cf2C113A41e308817) · [Blockscout](https://base-sepolia.blockscout.com/address/0xA0A5bDb07cD91411D937a43Cf2C113A41e308817) |
 
 The broadcast record lives in `contracts/broadcast/Deploy.s.sol/84532/`.
 
