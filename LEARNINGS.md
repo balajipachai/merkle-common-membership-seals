@@ -122,7 +122,10 @@ transfer and approve attempts, and checks that a seal never changes owner and th
   runs wrote into `broadcast/Deploy.s.sol/84532/` — where the real deploy record belongs — and one was committed
   as if it were real. The giveaways: the sender was anvil's default account `0xf39f…2266`, and the address was
   `0x5FbD…0aa3` (the first CREATE from that account), which has no code on Base Sepolia (`cast code` returned
-  `0x`). Check the sender and `cast code` before trusting a broadcast file.
+  `0x`). Check the sender and `cast code` before trusting a broadcast file. It kept happening after the real
+  deploy, too: every `npm test` overwrote `run-latest.json` with an anvil run. The fix is to set
+  `FOUNDRY_BROADCAST=cache/local-broadcast` in the environment of every local `forge script` (the e2e setup and
+  `dev:local`), which keeps local runs in the gitignored cache.
 - **Etherscan's V1 API is retired.** A `url = "https://api-sepolia.basescan.org/api"` in `foundry.toml`'s
   `[etherscan]` section made forge fail with `Failed to deserialize content` and a V1 deprecation notice. Drop the
   `url`; forge then uses the V2 multichain API with the same key.
